@@ -1,5 +1,5 @@
 import React from "react";
 
-export const ListItem = () => {
+export const TaskItem = () => {
   return <div>test</div>;
 };
