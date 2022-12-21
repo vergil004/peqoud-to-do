@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { Form, Input, Button } from "antd";
 import { useDispatch } from "react-redux";
-import { add_task } from "@/store/action-creators/ActionCreators";
+import { v4 as uuidv4 } from "uuid";
+import { add_task } from "@/store/action-creators/Task";
 
 const { TextArea } = Input;
 
@@ -12,7 +13,7 @@ type TTaskForm = {
 export const AddTaskForm: FC<TTaskForm> = ({ setModal }) => {
   const dispatch: any = useDispatch();
   const onSubmitHandler = (values: any) => {
-    dispatch(add_task(values));
+    dispatch(add_task(values, uuidv4()));
     setModal();
   };
   return (

@@ -1,4 +1,4 @@
-import { ADD_TASK } from "@/store/actions/task";
+import { ADD_TASK } from "@/store/actions/Task";
 
 const initialTaskState = {
   tasks: [],
@@ -7,7 +7,6 @@ const initialTaskState = {
 export function taskRuducer(state = initialTaskState, action) {
   switch (action.type) {
     case ADD_TASK: {
-      console.log(action.task);
       return { tasks: [...state.tasks, { ...action.task }] };
     }
 
